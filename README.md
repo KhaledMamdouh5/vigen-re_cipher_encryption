@@ -1,32 +1,40 @@
-Vigenère Cipher Implementation in Python
-This repository contains a Python implementation of the Vigenère Cipher, a polyalphabetic substitution method. It uses a keyword and a 2D encryption table (Tabula Recta) to encrypt and decrypt messages while preserving the original space structure.
+# Vigenère Cipher Implementation in Python
 
-📁 Project Structure
-encrypt.py: Script to convert plain text into encrypted ciphertext.
+A Python-based cryptographic tool for encrypting and decrypting messages using the **Vigenère Cipher** algorithm. This implementation maintains the original message's space structure and uses an external Excel-based transformation table for character mapping.
 
-decrypt.py: Script to convert ciphertext back into the original plain text.
 
-encrypt_table.xlsx: An Excel spreadsheet containing the 26x26 character substitution grid (required for the code to run).
 
-⚙️ How It Works
+## 🛠️ Project Features
+* **Space Preservation**: Records space indices before processing and re-injects them into the final output to maintain readability.
+* **Excel Integration**: Utilizes `pandas` to read the substitution matrix from `encrypt_table.xlsx`.
+* **Modular Scripts**: Dedicated files for encryption and decryption workflows.
+* **NumPy Support**: Uses vectorized arrays for efficient index mapping.
+
+## 📂 File Structure
+* `encrypt.py`: Logic for converting plaintext to ciphertext using a keyword.
+* `decrypt.py`: Logic for reverting ciphertext to plaintext using a keyword.
+* `encrypt_table.xlsx`: The 26x26 character reference grid (Required for execution).
+
+
+## ⚙️ How It Works
 The algorithm follows a specific 8-step process for both encryption and decryption:
 
-Key Definition: A keyword (e.g., TUNIS) is defined to determine the shifts.
+1. Key Definition: A keyword (e.g., FALCON) is defined to determine the shifts.
 
-Message Input: The user provides the target string (e.g., MEET ME AT PARK).
+2. Message Input: The user provides the target string (e.g., MEET ME AT PARK).
 
-Space Preservation: The script records the indices of spaces, removes them for calculation, and re-inserts them at the end.
+3. Space Preservation: The script records the indices of spaces, removes them for calculation, and re-inserts them at the end.
 
-Discretization: Both the key and message are broken into individual characters.
+4. Discretization: Both the key and message are broken into individual characters.
 
-Index Mapping: The code maps characters to their corresponding coordinates in the encrypt_table.xlsx.
+5. Index Mapping: The code maps characters to their corresponding coordinates in the encrypt_table.xlsx.
 
-Key Wrapping: The key is repeated to match the length of the message (e.g., TUNISTUNISTUNIS).
+6. Key Wrapping: The key is repeated to match the length of the message (e.g., TUNISTUNISTUNIS).
 
-Table Transformation:
+7. Table Transformation:
 
-Encryption: Finds the intersection of the key row and message column.
+    - Encryption: Finds the intersection of the key row and message column.
 
-Decryption: Searches the key row to find the ciphertext letter and identifies the corresponding header column.
+    - Decryption: Searches the key row to find the ciphertext letter and identifies the corresponding header column.
 
-Reconstruction: Spaces are added back, and the list of characters is joined into a string.
+8. Reconstruction: Spaces are added back, and the list of characters is joined into a string.
