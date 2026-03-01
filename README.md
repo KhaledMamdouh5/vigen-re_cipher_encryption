@@ -1,5 +1,3 @@
-Here is a clean, professional README.md file designed for direct use on GitHub.
-
 Vigenère Cipher Implementation in Python
 This repository contains a Python implementation of the Vigenère Cipher, a polyalphabetic substitution method. It uses a keyword and a 2D encryption table (Tabula Recta) to encrypt and decrypt messages while preserving the original space structure.
 
