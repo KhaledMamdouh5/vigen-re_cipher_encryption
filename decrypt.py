@@ -4,7 +4,7 @@ import numpy as np
 encryption_table = pd.read_excel("encrypt_table.xlsx", header=None)
 
 # Step 1: Define the key
-key = 'TUNIS'
+key = 'FALCON'
 
 # Step 2: Input the encrypted message
 encrypted_message = 'FYRB EX UG XSKE'
